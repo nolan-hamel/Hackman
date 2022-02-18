@@ -1,2 +1,0 @@
-
-  Welcome to Hackman! A Hangman style game created by Nolan Hamel.

@@ -35,7 +35,7 @@ namespace Hackman
  Choose an option using the UP and DOWN arrow keys and press ENTER to select.
  Change window scale with ctrl + scroll.
 ";
-            string[] options = { "Play", "About", "Exit" };
+            string[] options = { "Play", "Tutorial", "Exit" };
             Menu mainMenu = new Menu(prompt, options);
             int chosenOption = mainMenu.Run();
 
@@ -67,17 +67,9 @@ namespace Hackman
 
         private void DisplayTutorial()
         {
-            for(int i = 1; i<2; i++)
-            {
-                Clear();
-                string fileString = @"C:\Users\nolan\Desktop\Sophia\personal_projects\Hackman\Hackman\tutorial\page";
-                fileString += i.ToString() + ".txt";
-                string[] fileText = File.ReadAllLines(fileString);
-                for (int j = 0; j < fileText.Length; j++) WriteLine(fileText[j]);
-                WriteLine("\n\t\t\t\tPress any key to continue...");
-                ReadKey(true);
-            }
-
+            Clear();
+            Tutorial t = new Tutorial();
+            t.TutorialHangman();
             RunMainMenu();
         }
 

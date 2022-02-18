@@ -11,12 +11,16 @@ namespace Hackman
         private int Lives = 6;
         private int PrevLives = 6;
         private int WordStreak = 0;
+        private int Score = 0;
+        private int WrongGuessCount = 0;
 
         private void DisplayHangman()
         {
             SetCursorPosition(0, 0);
+
             CursorVisible = false;
-            WriteLine($"\n  Word Streak: {WordStreak}");
+            WriteLine($"\n  Score: {Score}");
+            WriteLine($"  Word Streak: {WordStreak}");
             Write($"  Lives: {Lives} ");
             ConsoleColor tempColor = ForegroundColor;
             ForegroundColor = ConsoleColor.Red;
@@ -32,6 +36,7 @@ namespace Hackman
             Word = Request.GetWord();
             Revealed = new string('_', Word.Length);
             ChosenLetters = "";
+            WrongGuessCount = 0;
             Clear();
             do
             {
@@ -73,12 +78,13 @@ namespace Hackman
                 if (Word == Revealed)
                 {
                     DisplayHangman();
-                    WriteLine($" Correct! +3 Lives");
-                    WriteLine($" Press any key to continue...");
+                    WriteLine($"\n  Correct! +3 Lives");
+                    WriteLine($"  Press any key to continue...");
                     ReadKey(true);
                     WordStreak++;
                     PrevLives = Lives;
                     Lives += 3;
+                    Score += 100 - 5*WrongGuessCount;
                     break;
                 }
 
@@ -86,8 +92,8 @@ namespace Hackman
             DisplayHangman();
             if (Word != Revealed)
             {
-                WriteLine($" Correct Word: {Word}");
-                WriteLine($" Press any key to return to main menu...");
+                WriteLine($"\n  Correct Word: {Word}");
+                WriteLine($"  Press any key to return to main menu...");
                 ReadKey(true);
             }
             return Lives;
@@ -95,6 +101,7 @@ namespace Hackman
 
         public void WrongGuess()
         {
+            WrongGuessCount++;
             int waitTime = 50;
             ForegroundColor = ConsoleColor.Red;
             DisplayHangman();

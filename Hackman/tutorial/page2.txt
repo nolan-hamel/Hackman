@@ -1,5 +1,0 @@
-
-  The game will be structured like this:
-  Word Streak: 0
-  Guessed Letters: 
-  
