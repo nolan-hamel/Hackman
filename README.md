@@ -12,3 +12,5 @@ Because it's in the console it is completely keyboard-based input.
 Source code can be found in the "Hackman" folder
 
 In order to create your own version of HackMan, simply download the source code and open the .sln file with visual studio.
+
+Here is the final release of Hackman: https://github.com/nolan-hamel/Hackman/releases/tag/Hackman_Windows
