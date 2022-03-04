@@ -7,7 +7,3 @@ bin/Release
 
 # ignore the key file
 key.txt
-
-# ignore csproj and sln
-*.csproj
-*.sln

@@ -34,6 +34,12 @@ namespace Hackman
         public int Run()
         {
             Word = Request.GetWord();
+            if(Word == null) 
+            {
+                WriteLine($"  API Key failed :(");
+                WriteLine($"\n  Press any key to return to main menu...");
+                return 0; 
+            }
             Revealed = new string('_', Word.Length);
             ChosenLetters = "";
             WrongGuessCount = 0;

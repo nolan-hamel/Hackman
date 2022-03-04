@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c051a1bd-d5fc-4bf7-96e5-91df0f4df4ec": {
+      "ProjectGuid": "c051a1bd-d5fc-4bf7-96e5-91df0f4df4ec",
+      "DisplayName": "Hackman",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

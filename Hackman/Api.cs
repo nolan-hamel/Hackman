@@ -17,12 +17,17 @@ namespace Hackman
             {
                 word = await response.Content.ReadAsStringAsync();
             }
+            else
+            {
+                word = null;
+            }
             return word;
         }
 
         public string GetWord()
         {
             string jsonStr = SendRequest().GetAwaiter().GetResult();
+            if(jsonStr == null) { return null; }
             string[] jsonList = jsonStr.Split("\"");
             return jsonList[3];
         }
