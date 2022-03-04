@@ -12,8 +12,11 @@ namespace Hackman
             Title = "HackMan by Nolan Hamel";
             CursorVisible = false;
             
-            SetWindowSize(WindowWidth, WindowHeight);
-            SetBufferSize(WindowWidth, WindowHeight);
+            if(Environment.OSVersion.Platform == PlatformID.Win32NT)
+            {
+                SetWindowSize(WindowWidth, WindowHeight);
+                SetBufferSize(WindowWidth, WindowHeight);
+            }
             RunMainMenu();
         }
 
